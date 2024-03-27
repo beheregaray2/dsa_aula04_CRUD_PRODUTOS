@@ -14,13 +14,32 @@ let listaProdutos = [
     }
 ];
 
+let idGerador = 2;
+
 
 function listar() {
     return listaProdutos;
 }
 
+function inserir(produto){
+    produto.id = ++idGerador;
+    listaProdutos.push(produto);
+};
+
 function main(){
     console.log(listar());
 }
+
+inserir({nome: "feijao",
+         categoria: "alimento",
+         preco: 8.00
+        });
+
+inserir({nome: "suco de laranja",
+        categoria: "bebida",
+        preco: 9.30
+       });
+
+console.log(listar())
 
 main();
